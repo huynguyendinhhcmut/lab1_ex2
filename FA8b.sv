@@ -3,8 +3,8 @@ module FA8b (
 	input logic [7:0] b,
 	input logic cin,
 	output logic [7:0] sum,
-	output logic cout, V
-);
+	output logic cout, V 
+	);
 
 logic [7:0] carry;
 
@@ -17,6 +17,6 @@ FA fa6 (.sum(sum[5]), .a(a[5]), .b(b[5]^cin), .cin(carry[4]), .cout(carry[5])); 
 FA fa7 (.sum(sum[6]), .a(a[6]), .b(b[6]^cin), .cin(carry[5]), .cout(carry[6])); 	//P6
 FA fa8 (.sum(sum[7]), .a(a[7]), .b(b[7]^cin), .cin(carry[6]), .cout(cout)); 		//P7
 
-xor (V, cout, carry[6]);
+xor ( V, cout, carry[6]);
 
 endmodule
